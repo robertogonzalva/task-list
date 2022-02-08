@@ -2,8 +2,8 @@ import React from "react";
 
 function Button({ className, children, variant, ...rest }) {
   const variants = {
-    primary: "bg-gray-200 text-gray-800 p-1 m-1 font-bold rounded",
-    secondary: "text-red-400 p-1 m-1 font-bold",
+    primary: "bg-slate-200 text-slate-700 py-2 px-3 font-bold rounded",
+    secondary: "text-red-400 py-2 px-3 font-bold",
   };
   return (
     <button className={[variants[variant], className].join(" ")} {...rest}>

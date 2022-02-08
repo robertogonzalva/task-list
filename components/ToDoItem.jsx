@@ -6,8 +6,9 @@ export default function ToDoItem({ task, toggleTask }) {
   };
 
   return (
-    <li>
+    <li className="font-medium">
       <input
+        className="mr-2 align-middle"
         type="checkbox"
         checked={completed}
         onChange={handleTaskCompleted}
