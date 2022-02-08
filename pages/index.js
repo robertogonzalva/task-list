@@ -78,6 +78,7 @@ export default function App() {
           </div>
           <div class="flex justify-center max-h-10">
             <input
+              ref={taskRef}
               className="auto-focus shadow-md rounded-md mr-2 w-7/12 border border-slate-300 focus:border-slate-400 focus:ring-2 focus:ring-slate-200 text-base outline-none text-gray-700 py-1 px-3 transition-colors duration-200 ease-in-out"
               type="text"
               placeholder="Write a new task..."
@@ -90,11 +91,7 @@ export default function App() {
             >
               Add
             </Button>
-            <Button
-              id="clear-btn"
-              variant="secondary"
-              onClick={handleClearTasks}
-            >
+            <Button variant="secondary" onClick={handleClearTasks}>
               Clear completed
             </Button>
           </div>
