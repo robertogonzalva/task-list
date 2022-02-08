@@ -47,6 +47,12 @@ export default function App() {
     setTasks(newTasks);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleTaskAdd();
+    }
+  };
+
   const pendingTasks = tasks.filter((task) => !task.completed).length;
 
   return (
@@ -64,29 +70,39 @@ export default function App() {
         <section className="container mx-auto px-42">
           <div class="px-5 py-20 mx-auto">
             <div class="flex flex-col text-center">
-              <h1 className="text-4xl font-extrabold leading-normal text-gray-900 text-center">
-                Create your task list
+              <h1 className="sm:text-4xl text-3xl font-extrabold leading-normal text-slate-900 text-center">
+                <span className="inline font-medium">Create your</span> task
+                list
               </h1>
             </div>
           </div>
-          <div class="flex justify-center">
+          <div class="flex justify-center max-h-10">
             <input
-              className="p-2 rounded-md border-none mr-2 min-w-min w-3/5"
-              ref={taskRef}
+              className="auto-focus shadow-md rounded-md mr-2 w-7/12 border border-slate-300 focus:border-slate-400 focus:ring-2 focus:ring-slate-200 text-base outline-none text-gray-700 py-1 px-3 transition-colors duration-200 ease-in-out"
               type="text"
               placeholder="Write a new task..."
+              onKeyPress={handleKeyPress}
             />
-            <Button variant="primary" onClick={handleTaskAdd}>
+            <Button
+              className="shadow-md"
+              variant="primary"
+              onClick={handleTaskAdd}
+            >
               Add
             </Button>
-            <Button variant="secondary" onClick={handleClearTasks}>
+            <Button
+              id="clear-btn"
+              variant="secondary"
+              onClick={handleClearTasks}
+            >
               Clear completed
             </Button>
           </div>
-          <div className="mt-10 mb-3">
-            <PendingTasks pendingTasks={pendingTasks} />
-          </div>
-          <ToDoList tasks={tasks} toggleTask={toggleTask} />
+          <ToDoList
+            tasks={tasks}
+            toggleTask={toggleTask}
+            pendingTasks={pendingTasks}
+          />
         </section>
       </main>
     </>
