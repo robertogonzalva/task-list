@@ -4,7 +4,6 @@ import { v4 as uuid } from "uuid";
 
 import ToDoList from "../components/ToDoList";
 import Button from "../components/Button";
-import PendingTasks from "../components/PendingTasks";
 
 const KEY = "tasks";
 
@@ -58,7 +57,7 @@ export default function App() {
   return (
     <>
       <Head>
-        <title>Task list 📝</title>
+        <title>Task list creator 📝</title>
         <meta
           name="description"
           content="In this website you will be able to list all task you have"
@@ -70,10 +69,12 @@ export default function App() {
         <section className="container mx-auto px-42">
           <div class="px-5 py-20 mx-auto">
             <div class="flex flex-col text-center">
-              <h1 className="sm:text-4xl text-3xl font-extrabold leading-normal text-slate-900 text-center">
-                <span className="inline font-medium">Create your</span> task
-                list
-              </h1>
+              <span className="sm:text-5xl text-4xl font-extrabold text-slate-800">
+                Create your{" "}
+                <h1 className="sm:text-5xl text-4xl font-extrabold leading-normal text-center bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-300 inline">
+                  task list
+                </h1>
+              </span>
             </div>
           </div>
           <div class="flex justify-center max-h-10">

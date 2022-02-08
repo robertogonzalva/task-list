@@ -3,7 +3,7 @@ import PendingTasks from "./PendingTasks";
 
 export default function ToDoList({ tasks, toggleTask, pendingTasks }) {
   return (
-    <div>
+    <div className="px-12">
       <div className="mt-10 mb-3">
         <PendingTasks pendingTasks={pendingTasks} />
       </div>

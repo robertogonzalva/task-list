@@ -2,7 +2,7 @@ import React from "react";
 
 function Button({ className, children, variant, ...rest }) {
   const variants = {
-    primary: "bg-slate-200 text-slate-700 py-2 px-3 font-bold rounded",
+    primary: "bg-slate-200 text-slate-800 py-2 px-3 font-bold rounded",
     secondary: "text-red-400 py-2 px-3 font-bold",
   };
   return (
